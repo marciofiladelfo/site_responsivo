@@ -1,0 +1,221 @@
+/* GERAL */
+body{
+    font-family: "Open Sans", Arial, Helvetica, sans-serif; /*AS fontes só usam aspas quando possuem mais de um nome*/
+    color: #4d4d4d;
+}
+h1, h2, h3, h4{
+    margin: 0;
+    font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
+}
+.botao{
+    color: #f1f1f1;
+    text-decoration: none;
+    padding: 10px 30px;
+    background-color: #466eda;
+    font-size: .9em;
+    border-radius: 3px;
+}
+.itens{
+    display: flex; /*Pesquisar mais sobre flex*/
+    flex-direction: column;
+    align-items: center;
+}
+
+/* NAVEGAÇÃO */
+nav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #4d4d4d;
+}
+nav > a{
+    text-decoration: none;
+    color: #f1f1f1;
+    font-weight: 700;
+    font-size: 28px;
+    font-family: Pacifico, serif;
+}
+nav ul{
+    list-style: none; /*remover marcações da lista*/
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+nav ul li{
+    text-align: center;
+    width: 100%;
+}
+nav ul li a{
+    display: inline-block;
+    padding: 10px 0;
+    width: 100%;
+    text-decoration: none;
+    color: #f1f1f1;
+}
+
+/*CABEÇALHO*/
+header{
+    background-image: url('../img/fundo.jpg'); /*Usando imagem de fundo*/
+    background-size: cover; /*Prepriedade para cobrir tudo*/
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #f1f1f1;
+    text-align: center;
+    padding: 20px; /* Usando 1 valor, será usado em ambos os lados, caso os valores sejam diferentes - padding: 10px 20px 20px 10px; em sentido horário*/
+}
+header p{
+    margin-bottom: 2em;
+}
+
+/*SOBRE*/
+#sobre{
+    text-align: center;
+    padding: 0 20px 20px;
+    background-color: #466eda;
+    color: #f1f1f1;
+}
+#sobre p{
+    margin-bottom: 2.5em;
+    max-width: 1000px; /*Defina largura maxima*/
+}
+#sobre .botao{
+    background-color: #f1f1f1;
+    color: #4d4d4d;
+}
+
+/*SERVIÇOS*/
+#servicos {
+    padding: 20px;
+}
+#servicos div{
+    text-align: center;
+    margin-top: 30px;
+}
+
+/*PORTIFÓLIO*/
+#portifolio{
+    padding-top: 20px;
+}
+#portifolio h2{
+    text-align: center;
+    margin-bottom: 20px;
+}
+#portifolio img{
+    width:100%;
+    box-shadow: 2px 2px 5px black;
+}
+figure{
+    position: relative;
+    border: none;
+}
+figure h4{
+    text-align: center;
+}
+figcaption{
+    position: absolute;
+    top: 0px;
+    background-color: rgba(0,0,0, .4); /*transparência*/
+    width: 100%;
+    height: 100%;
+    color: #f1f1f1;
+    opacity: 0;
+    transition: opacity 1s;
+}
+figcaption:hover{
+    opacity: 1;
+}
+
+/*CONTATO*/
+#contato{
+    text-align: center;
+    padding: 20px;
+}
+#contato a{
+    text-decoration: none;
+    font-weight: 700;
+    color: #161616;
+}
+
+/*FOOTER*/
+footer{
+    text-align: center;
+    background-color: #4d4d4d;
+    color: #f1f1f1;
+}
+
+/*MEDIA QUERIES*/
+@media screen and (min-width: 768px) {
+
+    /*NAVEGAÇÃO*/
+    nav{
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    nav ul{
+        flex-direction: row;
+        width: 70%;
+    }
+
+    /*CABEÇALHO*/
+    header{
+        height: 600px;
+        height: 60vh;
+        justify-content: center;
+    }
+
+    /*SOBRE*/
+    #sobre{
+        height: 250px;
+        height: 30vh;
+        justify-content: center;
+    }
+
+    /*SERVIÇOS*/
+    #servicos{
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: space-around;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+    #servicos h2{
+        text-align: center;
+        width: 100%;
+    }
+    #servicos div{
+        flex-grow: 1; /*proposrção de crescimento*/
+        flex-basis: 150px; /* largura máxima dos elemento*/
+        padding: 0 10px; /*espaço interno*/
+    }
+
+    /*PORTIFOLIO*/
+    #portifolio{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    #portifolio h2{
+        width: 100%;
+        text-align: center;
+    }
+    #portifolio img{
+        width: 33,3333333333%;
+    }
+    figcaption {
+        width: 33,3333333333%;
+    }
+    
+    /*CONTATO*/
+    #contato{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    #contato h2, #contato p{
+        width: 100%;
+    }
+}
